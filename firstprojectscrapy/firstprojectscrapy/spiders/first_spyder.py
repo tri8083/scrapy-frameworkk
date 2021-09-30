@@ -16,20 +16,20 @@ class firstspyder(scrapy.Spider):
 
         items = FirstprojectscrapyItem()
 
-        all_header = response.css('h1,h2,h3,h4,h5,h6')
+        all_header = response.css('h3')
         
         for header in all_header:
-            h2 = header.css('h2::text').extract()
+            # h2 = header.css('h2::text').extract()
             h3 = header.css('h3::text').extract()
-            h4 = header.css('h4::text').extract()
-            h5 = header.css('h5::text').extract()
-            h6 = header.css('h6::text').extract()
+            # h4 = header.css('h4::text').extract()
+            # h5 = header.css('h5::text').extract()
+            # h6 = header.css('h6::text').extract()
 
-            items['h2'] = h2
+            # items['h2'] = h2
             items['h3'] = h3
-            items['h4'] = h4
-            items['h5'] = h5
-            items['h6'] = h6
+            # items['h4'] = h4
+            # items['h5'] = h5
+            # items['h6'] = h6
 
             yield items
 

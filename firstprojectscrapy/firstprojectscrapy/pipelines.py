@@ -8,7 +8,6 @@
 
 import sqlite3
 
-from itemadapter import ItemAdapter
 
 
 class FirstprojectscrapyPipeline:
@@ -23,26 +22,19 @@ class FirstprojectscrapyPipeline:
     def create_table(self):
         self.curr.execute("""DROP TABLE IF EXISTS demo_tb""")
         self.curr.execute(""" create table  demo_tb(
-   h2 text,
-   h3 text,
-   h4 text,
-   h5 text,
-   h6 text
+  
+   h3 text
 ) """ )
 
 
     def process_item(self, item, spider):
-        self.store.db(item)
-        print("Pipeline :" + item['header'][0])
+        self.store_db(item)
+        print("Pipeline :" + item['h3'][0])
         return item
 
     def store_db(self, item):
-        self.curr.execute(""" insert into demo_tb  values(?,?,?,?,?)""",(
-        item['h2'][0],
+        self.curr.execute(""" insert into demo_tb  values(?)""",(
         item['h3'][0],
-        item['h4'][0],
-        item['h5'][0],
-        item['h6'][0]
     
         ))
 
