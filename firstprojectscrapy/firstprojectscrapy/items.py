@@ -7,6 +7,8 @@ import scrapy
 
 
 class FirstprojectscrapyItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+   h2 = scrapy.Field()
+   h3 = scrapy.Field()
+   h4 = scrapy.Field()
+   h5 = scrapy.Field()
+   h6 = scrapy.Field()
